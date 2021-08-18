@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score
 with open('model_pickle','rb') as f:
     model = pickle.load(f)
 
-columns = st.beta_columns((1,1))
+columns = st.columns((1,1))
 
 def user_report():
   pregnancies = st.sidebar.slider('Pregnancies',min_value = 0 , max_value = 17 , value = 3 , step = 1)
@@ -86,19 +86,19 @@ st.write(output)
 
 st.subheader('Data Used Details')
 
-Description = st.beta_expander("Data Description",expanded = False)
+Description = st.expander("Data Description",expanded = False)
 with Description:
   st.write(df.describe())
 
 image = Image.open('Capture.JPG')
 
-Visualization = st.beta_expander("Data Barplot",expanded = False)
+Visualization = st.expander("Data Barplot",expanded = False)
 with Visualization:
   st.image(image,use_column_width = True)
 
 y_pred = model.predict(x_test)
 
-Accuracy = st.beta_expander("Data Accuracy Score",expanded = False)
+Accuracy = st.expander("Data Accuracy Score",expanded = False)
 with Accuracy:
   st.write('Accuracy Score : ',accuracy_score(y_pred,y_test))
 
