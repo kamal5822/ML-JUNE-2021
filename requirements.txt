@@ -1,5 +1,4 @@
 streamlit
 pandas
-nupy
-PIL
+numpy
 scikit-learn
